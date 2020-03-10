@@ -1,4 +1,5 @@
 from random import randint
+
 from map_objects.rectangle import Rect
 from map_objects.tile import Tile
 
@@ -22,7 +23,6 @@ class GameMap:
             # Random width and height
             w = randint(room_min_size, room_max_size)
             h = randint(room_min_size, room_max_size)
-
             # Random position without going out of the boundries of map
             x = randint(0, map_width - w - 1)
             y = randint(0, map_height - h - 1)
@@ -61,7 +61,7 @@ class GameMap:
                         self.create_v_tunnel(prev_y, new_y, new_x)
                     else:
                         # first move vertically, then horizontally
-                        self.create_v_tunnel(prev_y, new_y, new_x)
+                        self.create_v_tunnel(prev_y, new_y, prev_x)
                         self.create_h_tunnel(prev_x, new_x, new_y)
 
                 # Finally append the new room to the list

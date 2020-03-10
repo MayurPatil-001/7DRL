@@ -1,4 +1,5 @@
 class Rect:
+    # Rectangle
     def __init__(self, x, y, w, h):
         self.x1 = x
         self.y1 = y
@@ -12,4 +13,5 @@ class Rect:
 
     def intersect(self, other):
         # Returns true if this rectangle intersects with another one
-        return (self.x1 <= other.x2 and self.x2 >= other.x1 and self.y1 <= other.y2 and self.y2 >= other.y1)
+        return (self.x1 <= other.x2 and self.x2 >= other.x1 and
+                self.y1 <= other.y2 and self.y2 >= other.y1)
